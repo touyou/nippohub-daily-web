@@ -1,0 +1,8 @@
+{
+  "name": "nippohub-daily",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:sasurai-usagi3/nippohub-daily.git",
+  "author": "宇山 拓夢 <sasurai.usagi3@gmail.com>",
+  "license": "MIT"
+}
