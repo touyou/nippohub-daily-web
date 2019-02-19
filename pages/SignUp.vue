@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="signUp">
     <input type="text" name="email" placeholder="email">
     <input type="password" name="password" placeholder="password">
     <input type="password" nane="password_confirmation" placeholder="password confirmation">
