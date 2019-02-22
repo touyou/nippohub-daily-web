@@ -13,7 +13,7 @@ export default {
         return;
       }
 
-      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(function(e) {
+      auth.createUserWithEmailAndPassword(this.email, this.password).catch(function(e) {
         if(e.code === 'auth/email-already-in-use') {
           alert('ご入力のメールアドレスは登録済みです');
         } else {
