@@ -19,6 +19,8 @@ export default {
     }
   },
   created: function() {
-    firebase.initializeApp(FIREBASE_CONFIG);
+    if(firebase.app.length === 0) {
+      firebase.initializeApp(FIREBASE_CONFIG);
+    }
   }
 }
