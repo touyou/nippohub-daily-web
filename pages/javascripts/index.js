@@ -1,5 +1,4 @@
-import firebase from 'firebase';
-import FIREBASE_CONFIG from '~/assets/javascripts/firebase_config.js';
+import firebase from '~/assets/javascripts/firebase.js';
 import DailyReportForm from '~/components/DailyReportForm.vue';
 import DailyReportList from '~/components/DailyReportList.vue';
 
@@ -12,8 +11,6 @@ export default {
     return {uid: ''};
   },
   mounted: function() {
-    firebase.initializeApp(FIREBASE_CONFIG);
-
     const auth = firebase.auth();
 
     auth.onAuthStateChanged(user => {
