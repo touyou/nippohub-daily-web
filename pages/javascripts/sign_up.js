@@ -1,5 +1,4 @@
-import firebase from 'firebase';
-import FIREBASE_CONFIG from '~/assets/javascripts/firebase_config.js';
+import firebase from '~/assets/javascripts/firebase.js';
 
 export default {
   data: function() {
@@ -22,8 +21,5 @@ export default {
         }
       });
     }
-  },
-  created: function() {
-    firebase.initializeApp(FIREBASE_CONFIG);
   }
 };
