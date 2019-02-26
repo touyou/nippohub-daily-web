@@ -8,7 +8,7 @@ export default {
     DailyReportList
   },
   data: function() {
-    return {uid: ''};
+    return {currentUserId: ''};
   },
   mounted: function() {
     const auth = firebase.auth();
