@@ -1,11 +1,28 @@
+import firebase from '~/assets/javascripts/firebase.js';
+
 export default {
+  props: ['currentUserId'],
   data: function() {
     return {dailyReports: [
-      {title: 'Title5', createdAt: '2019-02-21 12:34', date: '2019-02-21', accessId: 'rjfDJFfd'},
-      {title: 'Title4', createdAt: '2019-02-20 12:34', date: '2019-02-20', accessId: 'faijfnav'},
-      {title: 'Title3', createdAt: '2019-02-19 12:34', date: '2019-02-19', accessId: 'JFNfdand'},
-      {title: 'Title2', createdAt: '2019-02-18 12:34', date: '2019-02-18', accessId: 'OdfjjfDf'},
-      {title: 'Title1', createdAt: '2019-02-17 12:34', date: '2019-02-17', accessId: 'AHufnkja'}
     ]};
+  },
+  mounted: function() {
+    const database = firebase.database().ref('daily_reports/');
+
+    database.off(); // TODO: 全イベントハンドラが消えてしまうので範囲を狭める
+    database.on('value', res => {
+      const dailyReportList = res.val();
+      const dailyReports = [];
+
+      for(let dailyReportId in dailyReportList) {
+        const dailyReport = dailyReportList[dailyReportId];
+        const createdAt = new Date(dailyReport.createdAt);
+        const createdAtStr = `${createdAt.getFullYear()}-${createdAt.getMonth()}-${createdAt.getDate()} ${createdAt.getHours()}:${createdAt.getMinutes()}`;
+
+        dailyReports.push({id: dailyReportId, title: '無題', createdAt: createdAtStr, date: 'xxxx-xx-xx'});
+      }
+
+      this.dailyReports = dailyReports;
+    });
   }
 }
