@@ -19,7 +19,7 @@ export default {
         const createdAt = new Date(dailyReport.createdAt);
         const createdAtStr = `${createdAt.getFullYear()}-${createdAt.getMonth()}-${createdAt.getDate()} ${createdAt.getHours()}:${createdAt.getMinutes()}`;
 
-        dailyReports.push({id: dailyReportId, title: '無題', createdAt: createdAtStr, date: 'xxxx-xx-xx'});
+        dailyReports.push({id: dailyReportId, title: dailyReport.title, createdAt: createdAtStr, date: dailyReport.date});
       }
 
       this.dailyReports = dailyReports;
