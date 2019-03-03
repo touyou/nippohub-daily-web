@@ -9,8 +9,12 @@ export default {
   mounted: function() {
     const database = firebase.database().ref('daily_reports/');
 
+    if(this.currentUserId == null) {
+      return;
+    }
+
     database.off(); // TODO: 全イベントハンドラが消えてしまうので範囲を狭める
-    database.on('value', res => {
+    database.orderByChild('userId').equalTo(this.currentUserId).on('value', res => {
       const dailyReportList = res.val();
       const dailyReports = [];
 
