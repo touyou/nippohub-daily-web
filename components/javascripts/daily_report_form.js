@@ -1,6 +1,7 @@
 import firebase from '~/assets/javascripts/firebase.js';
 
 export default {
+  props: ['currentUserId'],
   data: function() {
     return {content: ''}
   },
@@ -8,10 +9,10 @@ export default {
     post: function() {
       const database = firebase.database();
 
-      // TODO: userIdの受け渡し
       database.ref('daily_reports/').push({
         content: this.content,
-        createdAt: Date.now() // TODO: タイムスタンプをサーバ側で生成する
+        createdAt: Date.now(), // TODO: タイムスタンプをサーバ側で生成する
+        userId: this.currentUserId
       });
 
       this.content = '';

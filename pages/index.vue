@@ -2,7 +2,7 @@
   <div>
     <!-- TODO: コンポーネント分ける -->
     <main-header :currentUserId="currentUserId"></main-header>
-    <daily-report-form></daily-report-form>
+    <daily-report-form :currentUserId="currentUserId"></daily-report-form>
     <daily-report-list></daily-report-list>
   </div>
 </template>
