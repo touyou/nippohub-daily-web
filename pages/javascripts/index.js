@@ -16,7 +16,7 @@ export default {
     const auth = firebase.auth();
 
     auth.onAuthStateChanged(user => {
-      this.currentUserId = user.uid;
+      this.currentUserId = (user != null) ? user.uid : null;
     });
   }
 };
