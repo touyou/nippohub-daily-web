@@ -3,7 +3,7 @@
     <h1>NippoHub Dialy</h1>
     <nav>
       <ul>
-        <li v-if="currentUserId !== null">Sign out</li>
+        <li v-if="currentUserId !== null" @click="signOut">Sign out</li>
         <template v-else>
           <li>Sign in</li>
           <li>Sign up</li>
