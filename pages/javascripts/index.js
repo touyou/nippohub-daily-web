@@ -10,7 +10,7 @@ export default {
     MainHeader
   },
   data: function() {
-    return {currentUserId: ''};
+    return {currentUserId: null};
   },
   mounted: function() {
     const auth = firebase.auth();
