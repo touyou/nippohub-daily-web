@@ -22,7 +22,8 @@ export default {
         const dailyReport = dailyReportList[dailyReportId];
         const createdAt = new Date(dailyReport.createdAt);
         // TODO: 日付などを0埋めして2桁に保てるようにする
-        const createdAtStr = `${createdAt.getFullYear()}-${createdAt.getMonth() + 1}-${createdAt.getDate()} ${createdAt.getHours()}:${createdAt.getMinutes()}`;
+        const alignDigit = x => `0${x}`.slice(-2);
+        const createdAtStr = `${createdAt.getFullYear()}-${alignDigit(createdAt.getMonth() + 1)}-${alignDigit(createdAt.getDate())} ${alignDigit(createdAt.getHours())}:${alignDigit(createdAt.getMinutes())}`;
 
         dailyReports.push({id: dailyReportId, title: dailyReport.title, createdAt: createdAtStr, date: dailyReport.date});
       }
