@@ -5,6 +5,7 @@
         <h2>{{ dailyReport.date }} {{ dailyReport.title }}</h2>
         <span>{{ dailyReport.createdAt }}</span>
       </a>
+      <a :href="`/daily_reports/${dailyReport.id}/edit`">編集</a>
     </li>
   </ul>
 </template>
