@@ -16,7 +16,7 @@ export default {
         .then(() => {
           location.href = '/';
         })
-        .catch(function(e) {
+        .catch(e => {
           if(e.code === 'auth/email-already-in-use') {
             alert('ご入力のメールアドレスは登録済みです');
           } else {
