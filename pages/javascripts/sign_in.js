@@ -12,7 +12,7 @@ export default {
         .then(() => {
           location.href = '/';
         })
-        .catch(function(e) {
+        .catch(e => {
           if(e.code === 'auth/wrong-password') {
             alert('パスワードが違います');
           } else if(e.code === 'auth/user-not-found') {
