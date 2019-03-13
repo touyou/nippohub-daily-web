@@ -12,14 +12,18 @@ export default {
         return;
       }
 
-      auth.createUserWithEmailAndPassword(this.email, this.password).catch(function(e) {
-        if(e.code === 'auth/email-already-in-use') {
-          alert('ご入力のメールアドレスは登録済みです');
-        } else {
-          console.error(e.code);
-          console.error(e.message);
-        }
-      });
+      auth.createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          location.href = '/';
+        })
+        .catch(function(e) {
+          if(e.code === 'auth/email-already-in-use') {
+            alert('ご入力のメールアドレスは登録済みです');
+          } else {
+            console.error(e.code);
+            console.error(e.message);
+          }
+        });
     }
   }
 };
