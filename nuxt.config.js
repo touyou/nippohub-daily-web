@@ -8,5 +8,8 @@ export default {
     meta: [
       {charset: 'utf-8'}
     ]
-  }
+  },
+  css: [
+    '@/assets/stylesheets/layout.css'
+  ]
 }
