@@ -16,4 +16,4 @@
 </template>
 
 <script src="./javascripts/main_header.js"></script>
-<style src="~/assets/header.css"></style>
+<style src="~/assets/stylesheets/header.css"></style>
