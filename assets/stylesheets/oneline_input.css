@@ -1,0 +1,8 @@
+.p-oneline-input {
+  height: 2.5em;
+  padding: 0.25em 0.5em;
+  outline: none;
+  border: 0.1em solid #ddd;
+  border-radius: 0.3em;
+  box-sizing: border-box;
+}
