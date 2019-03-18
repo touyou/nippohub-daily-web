@@ -1,6 +1,10 @@
 import firebase from '~/assets/javascripts/firebase.js';
+import MainHeader from '~/components/MainHeader.vue';
 
 export default {
+  components: {
+    MainHeader
+  },
   data: function() {
     return {email: '', password: ''};
   },
