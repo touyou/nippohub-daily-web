@@ -6,8 +6,8 @@
         <ul class="p-auth-links">
           <li class="p-auth-links__item" v-if="currentUserId !== null" @click="signOut">Sign out</li>
           <template v-else>
-            <li class="p-auth-links__item"><a href="/sign_in">Sign in</a></li>
-            <li class="p-auth-links__item"><a href="/sign_up">Sign up</a></li>
+            <li class="p-auth-links__item"><nuxt-link to="/sign_in">Sign in</nuxt-link></li>
+            <li class="p-auth-links__item"><nuxt-link to="/sign_up">Sign up</nuxt-link></li>
           </template>
         </ul>
       </nav>
