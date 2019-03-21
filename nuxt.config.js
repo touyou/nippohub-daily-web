@@ -2,7 +2,7 @@ export default {
   mode: 'spa',
   generate: {
     dir: 'docs',
-    fallback: true
+    fallback: '../404.html'
   },
   head: {
     title: 'NippoHub',
