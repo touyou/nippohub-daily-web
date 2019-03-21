@@ -1,7 +1,8 @@
 export default {
   mode: 'spa',
   generate: {
-    dir: 'docs'
+    dir: 'docs',
+    fallback: true
   },
   head: {
     title: 'NippoHub',
