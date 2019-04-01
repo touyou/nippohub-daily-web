@@ -1,4 +1,5 @@
 import firebase from '~/assets/javascripts/firebase.js';
+import RandomStringGenerator from '~/assets/javascripts/random_string_generator.js';
 
 export default {
   props: ['currentUserId', 'dailyReportId'],
@@ -25,6 +26,7 @@ export default {
           title: this.title,
           content: this.content,
           createdAt: Date.now(), // TODO: タイムスタンプをサーバ側で生成する
+          accessId: btoa(Date.now()).replace(/=/g, '') + RandomStringGenerator.generate(12), // TODO: idの生成方法を要検討
           userId: this.currentUserId
         });
 
