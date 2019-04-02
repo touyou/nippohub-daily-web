@@ -11,5 +11,5 @@
   </div>
 </template>
 
-<script src="./javascripts/index.js"></script>
+<script src="~/assets/javascripts/pages/index.js"></script>
 <style src="~/assets/stylesheets/sub_title.css"></style>
