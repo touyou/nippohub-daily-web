@@ -15,5 +15,5 @@
   </header>
 </template>
 
-<script src="./javascripts/main_header.js"></script>
+<script src="~/assets/javascripts/components/main_header.js"></script>
 <style src="~/assets/stylesheets/header.css"></style>
