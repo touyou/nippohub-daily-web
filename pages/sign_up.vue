@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script src="./javascripts/sign_up.js"></script>
+<script src="~/assets/javascripts/pages/sign_up.js"></script>
 <style src="~/assets/stylesheets/submit.css"></style>
 <style src="~/assets/stylesheets/oneline_input.css"></style>
 <style src="~/assets/stylesheets/auth_form.css"></style>
