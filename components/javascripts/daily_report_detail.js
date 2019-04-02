@@ -3,7 +3,7 @@ import firebase from '~/assets/javascripts/firebase.js';
 export default {
   props: ['dailyReportId'],
   data: function() {
-    return {title: '', content: ''};
+    return {title: '', content: '', accessId: ''};
   },
   mounted: function() {
     const database = firebase.database();
@@ -16,6 +16,7 @@ export default {
 
       this.title = `${dailyReport.date} ${dailyReport.title}`;
       this.content = dailyReport.content;
+      this.accessId = dailyReport.accessId
     });
   }
 }
