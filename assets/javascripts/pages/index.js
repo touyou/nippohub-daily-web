@@ -1,23 +1,22 @@
-import firebase from '~/assets/javascripts/firebase.js';
+import firebase from '~/assets/javascripts/util/firebase.js';
 import MainHeader from '~/components/MainHeader.vue';
 import DailyReportForm from '~/components/DailyReportForm.vue';
-import ButtonDeletingDailyReport from '~/components/ButtonDeletingDailyReport.vue';
+import DailyReportList from '~/components/DailyReportList.vue';
 
 export default {
   components: {
-    MainHeader,
     DailyReportForm,
-    ButtonDeletingDailyReport
+    DailyReportList,
+    MainHeader
   },
   data: function() {
-    return {currentUserId: null}
+    return {currentUserId: null};
   },
   mounted: function() {
     const auth = firebase.auth();
 
-    // TODO: indexとまとめる
     auth.onAuthStateChanged(user => {
       this.currentUserId = (user != null) ? user.uid : null;
     });
   }
-}
+};

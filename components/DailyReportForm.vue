@@ -13,7 +13,7 @@
   </form>
 </template>
 
-<script src="./javascripts/daily_report_form.js"></script>
+<script src="~/assets/javascripts/components/daily_report_form.js"></script>
 <style src="~/assets/stylesheets/oneline_input.css"></style>
 <style src="~/assets/stylesheets/submit.css"></style>
 <style src="~/assets/stylesheets/daily_report_form.css"></style>

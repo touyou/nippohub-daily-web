@@ -7,4 +7,4 @@
   </div>
 </template>
 
-<script src="~/pages/javascripts/daily_report_public.js">
+<script src="~/assets/javascripts/pages/daily_report_public.js">

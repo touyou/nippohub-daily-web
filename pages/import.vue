@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script src="./javascripts/import.js"></script>
+<script src="~/assets/javascripts/pages/import.js"></script>
 <style src="~/assets/stylesheets/submit.css"></style>
 <style src="~/assets/stylesheets/import_form.css"></style>
 <style src="~/assets/stylesheets/utility.css"></style>

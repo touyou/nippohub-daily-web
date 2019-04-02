@@ -8,4 +8,4 @@
   </div>
 </template>
 
-<script src="./javascripts/daily_report_detail.js">
+<script src="~/assets/javascripts/components/daily_report_detail.js">

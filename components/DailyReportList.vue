@@ -9,5 +9,5 @@
   </ul>
 </template>
 
-<script src="./javascripts/daily_report_list.js"></script>
+<script src="~/assets/javascripts/components/daily_report_list.js"></script>
 <style src="~/assets/stylesheets/daily_report_list.css"></style>

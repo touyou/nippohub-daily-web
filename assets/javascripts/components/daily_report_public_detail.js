@@ -1,4 +1,4 @@
-import firebase from '~/assets/javascripts/firebase.js';
+import firebase from '~/assets/javascripts/util/firebase.js';
 
 export default {
   props: ['dailyReportAccessId'],
