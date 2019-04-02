@@ -1,5 +1,5 @@
-import firebase from '~/assets/javascripts/firebase.js';
-import RandomStringGenerator from '~/assets/javascripts/random_string_generator.js';
+import firebase from '~/assets/javascripts/util/firebase.js';
+import RandomStringGenerator from '~/assets/javascripts/util/random_string_generator.js';
 import MainHeader from '~/components/MainHeader.vue';
 
 export default {

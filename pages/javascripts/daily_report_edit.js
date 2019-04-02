@@ -1,4 +1,4 @@
-import firebase from '~/assets/javascripts/firebase.js';
+import firebase from '~/assets/javascripts/util/firebase.js';
 import MainHeader from '~/components/MainHeader.vue';
 import DailyReportForm from '~/components/DailyReportForm.vue';
 import ButtonDeletingDailyReport from '~/components/ButtonDeletingDailyReport.vue';
