@@ -14,7 +14,7 @@ export default {
     }
 
     database.off(); // TODO: 全イベントハンドラが消えてしまうので範囲を狭める
-    database.orderByChild('userId').equalTo(this.currentUserId).on('value', res => {
+    database.orderByChild('userId').equalTo(this.currentUserId).limitToLast(30).on('value', res => {
       const dailyReportList = res.val();
       const dailyReports = [];
 
