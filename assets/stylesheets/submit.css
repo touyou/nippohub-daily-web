@@ -1,4 +1,5 @@
-.p-submit {
+/* NOTE: p-btnに移行する */
+.p-submit, .p-btn {
   background-color: #fff;
   border: 0.1em solid #ddd;
   border-radius: 0.3em;
