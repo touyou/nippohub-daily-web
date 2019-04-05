@@ -7,14 +7,15 @@ export default {
     ]};
   },
   mounted: function() {
-    const database = firebase.database().ref('daily_reports/');
-
     if(this.currentUserId == null) {
       return;
     }
 
+    const database = firebase.database().ref(`users/${this.currentUserId}/daily_reports/`);
+
+
     database.off(); // TODO: 全イベントハンドラが消えてしまうので範囲を狭める
-    database.orderByChild('userId').equalTo(this.currentUserId).limitToLast(30).on('value', res => {
+    database.limitToLast(30).on('value', res => {
       const dailyReportList = res.val();
       const dailyReports = [];
 
