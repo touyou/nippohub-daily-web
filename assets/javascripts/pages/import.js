@@ -1,5 +1,4 @@
 import firebase from '~/assets/javascripts/util/firebase.js';
-import RandomStringGenerator from '~/assets/javascripts/util/random_string_generator.js';
 import MainHeader from '~/components/MainHeader.vue';
 
 export default {
@@ -17,13 +16,11 @@ export default {
       }
 
       for(let dailyReport of dailyReports) {
-        database.ref('daily_reports/').push({
+        database.ref(`/users/${this.currentUserId}/daily_reports`).push({
           date: dailyReport.date,
           title: dailyReport.title || '',
           content: dailyReport.content,
-          createdAt: Date.now(), // TODO: タイムスタンプをサーバ側で生成する
-          accessId: btoa(Date.now()).replace(/=/g, '') + RandomStringGenerator.generate(12), // TODO: idの生成方法を要検討
-          userId: this.currentUserId
+          createdAt: Date.now() // TODO: タイムスタンプをサーバ側で生成する
         });
       }
     }
