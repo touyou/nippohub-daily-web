@@ -13,9 +13,8 @@ export default {
 
     const database = firebase.database().ref(`users/${this.currentUserId}/daily_reports/`);
 
-
     database.off(); // TODO: 全イベントハンドラが消えてしまうので範囲を狭める
-    database.limitToLast(30).on('value', res => {
+    database.orderByChild('date').limitToLast(30).on('value', res => {
       const dailyReportList = res.val();
       const dailyReports = [];
 
@@ -29,7 +28,15 @@ export default {
         dailyReports.push({id: dailyReportId, title: dailyReport.title, createdAt: createdAtStr, date: dailyReport.date});
       }
 
-      this.dailyReports = dailyReports;
+      this.dailyReports = dailyReports.sort((x1, x2) => {
+        if(x1.date < x2.date) {
+          return -1;
+        } else if(x1.date === x2.date) {
+          return 0;
+        } else {
+          return 1;
+        }
+      }).reverse();
     });
   }
 }
