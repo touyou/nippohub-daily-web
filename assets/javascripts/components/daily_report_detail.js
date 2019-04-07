@@ -1,9 +1,11 @@
 import firebase from '~/assets/javascripts/util/firebase.js';
+import ShareLink from '~/components/ShareLink.vue';
 
 export default {
+  components: {ShareLink},
   props: ['currentUserId', 'dailyReportId'],
   data: function() {
-    return {title: '', content: '', accessId: ''};
+    return {title: '', content: '', accessKey: null};
   },
   mounted: function() {
     const database = firebase.database();
@@ -20,7 +22,7 @@ export default {
 
       this.title = `${dailyReport.date} ${dailyReport.title}`;
       this.content = dailyReport.content;
-      this.accessId = dailyReport.accessId
+      this.accessKey = dailyReport.access_key;
     });
   }
 }

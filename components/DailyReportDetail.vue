@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>共有URL: <input type="text" readonly :value="`https://nippohub.com/daily_reports/public/${accessId}`" style="width: 100%"></div>
+    <share-link :current-user-id="currentUserId" :daily-report-id="dailyReportId" :init-access-key="accessKey"></share-link>
     <article>
       <h2>{{ title }}</h2>
       <p>{{ content }}</p>
