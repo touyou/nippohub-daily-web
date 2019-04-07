@@ -1,26 +1,34 @@
 import firebase from '~/assets/javascripts/util/firebase.js';
 
 export default {
-  props: ['dailyReportAccessId'],
+  props: ['accessKey'],
   data: function() {
     return {title: '', content: '', didFind: false};
   },
   mounted: function() {
     const database = firebase.database();
 
-    database.ref('/daily_reports').orderByChild('accessId').equalTo(this.dailyReportAccessId).once('value', r => {
-      const dailyReports = r.val();
+    new Promise((resolve, reject) => {
+      database.ref(`/access_keys/${this.accessKey}`).once('value', r => {
+        const accessKey = r.val();
 
-      // 通常ないが同一アクセスIDの日報が見つかった場合も考慮しない
-      for(let dailyReportId in dailyReports) {
-        const dailyReport = dailyReports[dailyReportId];
+        if(accessKey == null) {
+          reject();
+        }
+
+        resolve(accessKey);
+      });
+    }).then((accessKey) => {
+      const userId = accessKey.user_id;
+      const dailyReportId = accessKey.daily_report_id;
+
+      database.ref(`/users/${userId}/daily_reports/${dailyReportId}`).once('value', r => {
+        const dailyReport = r.val();
 
         this.title = `${dailyReport.date} ${dailyReport.title}`;
         this.content = dailyReport.content;
         this.didFind = true;
-
-        break;
-      }
+      });
     });
   }
 }
