@@ -1,14 +1,20 @@
 import firebase from '~/assets/javascripts/util/firebase.js';
+import ShareLink from '~/components/ShareLink.vue';
 
 export default {
-  props: ['dailyReportId'],
+  components: {ShareLink},
+  props: ['currentUserId', 'dailyReportId'],
   data: function() {
-    return {title: '', content: '', accessId: ''};
+    return {title: '', content: '', accessKey: null, didFind: false};
   },
   mounted: function() {
     const database = firebase.database();
 
-    database.ref(`/daily_reports/${this.dailyReportId}`).once('value', r => {
+    if(this.currentUserId == null) {
+      return;
+    }
+
+    database.ref(`users/${this.currentUserId}/daily_reports/${this.dailyReportId}`).once('value', r => {
       const dailyReport = r.val();
       if(dailyReport == null) {
         return; // TODO: 日報が見つからなかった時の処理
@@ -16,7 +22,8 @@ export default {
 
       this.title = `${dailyReport.date} ${dailyReport.title}`;
       this.content = dailyReport.content;
-      this.accessId = dailyReport.accessId
+      this.accessKey = dailyReport.access_key;
+      this.didFind = true;
     });
   }
 }

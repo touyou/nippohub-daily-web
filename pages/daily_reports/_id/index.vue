@@ -2,7 +2,7 @@
   <div>
     <main-header :currentUserId="currentUserId"></main-header>
     <div class="l-container">
-      <DailyReportDetail :daily-report-id="$route.params.id"></DailyReportDetail>
+      <DailyReportDetail :daily-report-id="$route.params.id" :current-user-id="currentUserId" v-if="currentUserId != null"></DailyReportDetail>
     </div>
   </div>
 </template>

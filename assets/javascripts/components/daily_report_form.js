@@ -15,19 +15,17 @@ export default {
       }
 
       if(this.dailyReportId != null) {
-        database.ref(`daily_reports/${this.dailyReportId}`).update({
+        database.ref(`users/${this.currentUserId}/daily_reports/${this.dailyReportId}`).update({
           date: this.date,
           title: this.title,
           content: this.content
         });
       } else {
-        database.ref('daily_reports/').push({
+        database.ref(`users/${this.currentUserId}/daily_reports`).push({
           date: this.date,
           title: this.title,
           content: this.content,
-          createdAt: Date.now(), // TODO: タイムスタンプをサーバ側で生成する
-          accessId: btoa(Date.now()).replace(/=/g, '') + RandomStringGenerator.generate(12), // TODO: idの生成方法を要検討
-          userId: this.currentUserId
+          createdAt: Date.now() // TODO: タイムスタンプをサーバ側で生成する
         });
 
         this.date = null;
@@ -39,9 +37,9 @@ export default {
   mounted: function() {
     const database = firebase.database();
 
-    if(this.dailyReportId != null) {
+    if(this.currentUserId != null && this.dailyReportId != null) {
       // TODO: DailyReportDetailとまとめる
-      database.ref(`/daily_reports/${this.dailyReportId}`).once('value', r => {
+      database.ref(`users/${this.currentUserId}/daily_reports/${this.dailyReportId}`).once('value', r => {
         const dailyReport = r.val();
         if(dailyReport == null) {
           return; // TODO: 日報が見つからなかった時の処理

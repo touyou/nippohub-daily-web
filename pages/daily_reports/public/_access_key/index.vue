@@ -2,7 +2,7 @@
   <div>
     <main-header :currentUserId="currentUserId"></main-header>
     <div class="l-container">
-      <DailyReportPublicDetail :daily-report-access-id="$route.params.access_id"></DailyReportPublicDetail>
+      <DailyReportPublicDetail :access-key="$route.params.access_key"></DailyReportPublicDetail>
     </div>
   </div>
 </template>
