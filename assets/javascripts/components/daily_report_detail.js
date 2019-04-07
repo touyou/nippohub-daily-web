@@ -5,7 +5,7 @@ export default {
   components: {ShareLink},
   props: ['currentUserId', 'dailyReportId'],
   data: function() {
-    return {title: '', content: '', accessKey: null};
+    return {title: '', content: '', accessKey: null, didFind: false};
   },
   mounted: function() {
     const database = firebase.database();
@@ -23,6 +23,7 @@ export default {
       this.title = `${dailyReport.date} ${dailyReport.title}`;
       this.content = dailyReport.content;
       this.accessKey = dailyReport.access_key;
+      this.didFind = true;
     });
   }
 }
