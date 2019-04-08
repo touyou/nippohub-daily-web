@@ -2,7 +2,7 @@
   <div>
     <template v-if="didFind">
       <article>
-        <h2>{{ title }}</h2>
+        <h1>{{ title }}</h1>
         <main v-html="content"></main>
       </article>
     </template>
