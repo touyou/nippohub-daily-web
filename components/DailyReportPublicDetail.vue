@@ -3,7 +3,7 @@
     <template v-if="didFind">
       <article>
         <h2>{{ title }}</h2>
-        <p>{{ content }}</p>
+        <main v-html="content"></main>
       </article>
     </template>
     <div v-else>
