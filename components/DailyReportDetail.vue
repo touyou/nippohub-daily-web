@@ -3,8 +3,8 @@
     <div v-if="didFind">
       <share-link :current-user-id="currentUserId" :daily-report-id="dailyReportId" :init-access-key="accessKey"></share-link>
       <article>
-        <h2>{{ title }}</h2>
-        <p>{{ content }}</p>
+        <h1>{{ title }}</h1>
+        <main v-html="content"></main>
       </article>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import marked from 'marked';
 import firebase from '~/assets/javascripts/util/firebase.js';
 
 export default {
@@ -26,7 +27,7 @@ export default {
         const dailyReport = r.val();
 
         this.title = `${dailyReport.date} ${dailyReport.title}`;
-        this.content = dailyReport.content;
+        this.content = marked(dailyReport.content);
         this.didFind = true;
       });
     });

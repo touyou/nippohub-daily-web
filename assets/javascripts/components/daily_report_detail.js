@@ -1,3 +1,4 @@
+import marked from 'marked';
 import firebase from '~/assets/javascripts/util/firebase.js';
 import ShareLink from '~/components/ShareLink.vue';
 
@@ -21,7 +22,7 @@ export default {
       }
 
       this.title = `${dailyReport.date} ${dailyReport.title}`;
-      this.content = dailyReport.content;
+      this.content = marked(dailyReport.content);
       this.accessKey = dailyReport.access_key;
       this.didFind = true;
     });
