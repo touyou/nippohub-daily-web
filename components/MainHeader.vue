@@ -1,7 +1,7 @@
 <template>
   <header class="p-header">
     <div class="p-header__container">
-      <h1 class="p-page-title">NippoHub</h1>
+      <h1 class="p-page-title"><nuxt-link to="/">NippoHub</nuxt-link></h1>
       <nav>
         <ul class="p-auth-links">
           <li class="p-auth-links__item" v-if="currentUserId !== null" @click="signOut">Sign out</li>
