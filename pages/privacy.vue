@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-header :currentUserId="currentUser"></main-header>
+    <main-header :currentUserId="currentUserId"></main-header>
     <div class="l-container">
       <article>
         <p>本ウェブサービスは、日報の作成・管理を行うサービスです。</p>

@@ -4,7 +4,7 @@ import MainHeader from '~/components/MainHeader.vue';
 export default {
   components: {MainHeader},
   data: function() {
-    return {currentUser: null};
+    return {currentUserId: null};
   },
   mounted: function() {
     const auth = firebase.auth();

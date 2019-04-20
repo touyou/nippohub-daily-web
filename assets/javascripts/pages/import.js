@@ -4,7 +4,7 @@ import MainHeader from '~/components/MainHeader.vue';
 export default {
   components: {MainHeader},
   data: function() {
-    return {currentUser: null, dailyReportsJson: ''};
+    return {currentUserId: null, dailyReportsJson: ''};
   },
   methods: {
     requestToImport: function() {
