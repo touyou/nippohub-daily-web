@@ -20,6 +20,7 @@
         </div>
       </form>
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 

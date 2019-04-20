@@ -38,6 +38,7 @@
         お問い合わせは<a href="https://forms.gle/mjWV5f7XNbUXVUgW6" target="_blank">こちら(フォームへ)</a>
       </article>
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 

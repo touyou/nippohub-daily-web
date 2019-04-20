@@ -4,6 +4,7 @@
     <div class="l-container">
       <DailyReportPublicDetail :access-key="$route.params.access_key"></DailyReportPublicDetail>
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 

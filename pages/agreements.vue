@@ -143,6 +143,7 @@
         </ol>
       </article>
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 
