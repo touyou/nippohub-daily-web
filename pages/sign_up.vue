@@ -12,6 +12,9 @@
         <div class="u-mt-075">
           <input class="p-oneline-input p-auth-form__input" type="password" nane="password_confirmation" placeholder="password confirmation" v-model="passwordConfirmation">
         </div>
+        <p>
+          サインアップすると<nuxt-link to="/agreements" target="_blank">利用規約</nuxt-link>と<nuxt-link to="/privacy" target="_blank">プライバシーポリシー</nuxt-link>に同意したことになります。
+        </p>
         <div class="u-mt-075 u-text-align-right">
           <button class="p-submit" type="submit">サインアップ</button>
         </div>
