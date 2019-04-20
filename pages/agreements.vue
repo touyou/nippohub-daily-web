@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-header :currentUserId="currentUser"></main-header>
+    <main-header :currentUserId="currentUserId"></main-header>
     <div class="l-container">
       <article>
         <h1>利用規約</h1>
