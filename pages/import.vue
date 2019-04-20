@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main-header :currentUserId="currentUser"></main-header>
+    <main-header :currentUserId="currentUserId"></main-header>
     <div class="l-container">
       <form class="p-import-form">
         <textarea class="p-import-form__text-area" name="daily_reports" v-model="dailyReportsJson"></textarea>
@@ -9,6 +9,7 @@
         </div>
       </form>
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 

@@ -2,12 +2,14 @@ import firebase from '~/assets/javascripts/util/firebase.js';
 import MainHeader from '~/components/MainHeader.vue';
 import DailyReportForm from '~/components/DailyReportForm.vue';
 import DailyReportList from '~/components/DailyReportList.vue';
+import MainFooter from '~/components/MainFooter.vue';
 
 export default {
   components: {
     DailyReportForm,
     DailyReportList,
-    MainHeader
+    MainHeader,
+    MainFooter
   },
   data: function() {
     return {currentUserId: null};

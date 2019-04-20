@@ -1,10 +1,14 @@
 import firebase from '~/assets/javascripts/util/firebase.js';
 import MainHeader from '~/components/MainHeader.vue';
+import MainFooter from '~/components/MainFooter.vue';
 
 export default {
-  components: {MainHeader},
+  components: {
+    MainHeader,
+    MainFooter
+  },
   data: function() {
-    return {currentUser: null, dailyReportsJson: ''};
+    return {currentUserId: null, dailyReportsJson: ''};
   },
   methods: {
     requestToImport: function() {

@@ -4,6 +4,7 @@
     <div class="l-container">
       <DailyReportDetail :daily-report-id="$route.params.id" :current-user-id="currentUserId" v-if="currentUserId != null"></DailyReportDetail>
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 
