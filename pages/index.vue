@@ -11,6 +11,7 @@
         <button type="button" class="p-btn" @click="deleteAll">全削除する</button>
       </div>-->
     </div>
+    <main-footer></main-footer>
   </div>
 </template>
 
